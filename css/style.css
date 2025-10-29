@@ -252,9 +252,24 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
+    }
+
+    .student-info {
+        padding: 0.8rem;
     }
 
     nav ul {
@@ -264,10 +279,12 @@ footer p {
     nav ul li a {
         padding: 0.8rem 1rem;
         border-bottom: 1px solid #34495e;
+        text-align: center;
     }
 
     .cards {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .content-section {
@@ -276,5 +293,48 @@ footer p {
 
     .content-section h2 {
         font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .student-info p {
+        font-size: 0.9rem;
+    }
+
+    .intro {
+        padding: 1.5rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card h4 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
     }
 }
