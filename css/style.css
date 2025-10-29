@@ -53,6 +53,37 @@ nav {
     z-index: 1000;
 }
 
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.menu-btn.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -272,8 +303,30 @@ footer p {
         padding: 0.8rem;
     }
 
+    .menu-btn {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+    }
+
+    nav .container {
+        position: relative;
+    }
+
     nav ul {
+        display: none;
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #2c3e50;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav ul.show {
+        display: flex;
     }
 
     nav ul li a {
