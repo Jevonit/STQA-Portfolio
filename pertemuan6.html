@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6 - Pengantar API Testing | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 6: Pengantar API Testing</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html" class="active">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Definisi API Testing</h2>
+                
+                <h3>Apa itu API?</h3>
+                <p>API (Application Programming Interface) adalah sekumpulan protokol, tools, dan definisi yang memungkinkan aplikasi yang berbeda untuk berkomunikasi satu sama lain. API berfungsi sebagai jembatan yang menghubungkan berbagai software components atau systems. Dalam konteks web development, API sering merujuk pada REST API atau Web API yang berkomunikasi melalui HTTP/HTTPS protocol.</p>
+
+                <h3>Apa itu API Testing?</h3>
+                <p>API Testing adalah tipe software testing yang memverifikasi bahwa API berfungsi dengan benar dan memenuhi ekspektasi dalam hal functionality, reliability, performance, dan security. API testing dilakukan pada application layer atau business logic layer tanpa UI, fokus pada request dan response data.</p>
+
+                <h3>Karakteristik API Testing</h3>
+                <ul>
+                    <li>Testing dilakukan di level business logic, bukan UI</li>
+                    <li>Fokus pada data exchange (request/response)</li>
+                    <li>Menggunakan HTTP methods (GET, POST, PUT, DELETE, PATCH)</li>
+                    <li>Memverifikasi response codes, headers, dan body</li>
+                    <li>Dapat dilakukan secara automated</li>
+                    <li>Testing dilakukan lebih awal dalam development cycle</li>
+                </ul>
+
+                <h3>Perbedaan API Testing vs UI Testing</h3>
+                <p><strong>API Testing:</strong></p>
+                <ul>
+                    <li>Tests business logic layer</li>
+                    <li>Tidak memerlukan GUI</li>
+                    <li>Lebih cepat untuk execute</li>
+                    <li>Lebih stabil (tidak terpengaruh UI changes)</li>
+                    <li>Dapat test sebelum UI ready</li>
+                </ul>
+
+                <p><strong>UI Testing:</strong></p>
+                <ul>
+                    <li>Tests presentation layer</li>
+                    <li>Memerlukan fully functional UI</li>
+                    <li>Lebih lambat untuk execute</li>
+                    <li>Prone to failures karena UI changes</li>
+                    <li>Dilakukan setelah UI development complete</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Best Practice:</strong> Testing pyramid merekomendasikan lebih banyak API/integration tests dibanding UI tests karena API tests lebih cepat, reliable, dan maintainable.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Keunggulan API Testing</h2>
+                
+                <h3>Mengapa Pengujian API Penting?</h3>
+                <p>API testing memberikan berbagai keuntungan penting dalam software development:</p>
+
+                <h4>1. Early Testing</h4>
+                <p>API testing dapat dilakukan segera setelah business logic selesai dibuat, bahkan sebelum UI development dimulai. Ini memungkinkan early bug detection dan mempercepat development cycle secara keseluruhan.</p>
+
+                <h4>2. Language Independent</h4>
+                <p>API testing tidak terikat pada bahasa pemrograman atau framework tertentu. Kita dapat test API yang dibuat dengan Java menggunakan testing tools berbasis JavaScript atau Python, selama API menggunakan standard protocol seperti HTTP.</p>
+
+                <h4>3. Faster Execution</h4>
+                <p>API tests jauh lebih cepat dibanding UI tests karena tidak perlu rendering UI dan menunggu browser loading. Satu API test bisa dijalankan dalam hitungan milidetik, sementara UI test bisa memakan beberapa detik.</p>
+
+                <h4>4. Better Test Coverage</h4>
+                <p>Dengan API testing, kita dapat test berbagai scenarios dan edge cases yang sulit atau tidak mungkin ditest melalui UI. Misalnya testing dengan data volume besar atau testing error scenarios yang jarang terjadi di UI.</p>
+
+                <h4>5. Easier Maintenance</h4>
+                <p>API tests lebih stable dan mudah dimaintain karena API contracts cenderung lebih stabil dibanding UI. UI changes sering terjadi karena redesign atau UX improvements, tapi API endpoint jarang berubah.</p>
+
+                <h4>6. Integration Testing</h4>
+                <p>API testing sangat efektif untuk integration testing karena memverifikasi komunikasi antara berbagai services atau components dalam microservices architecture.</p>
+
+                <h4>7. Performance Testing</h4>
+                <p>API testing memudahkan performance dan load testing karena dapat mengirim banyak requests secara parallel untuk simulate high traffic tanpa overhead dari UI rendering.</p>
+
+                <h4>8. Security Testing</h4>
+                <p>API adalah entry point untuk data dan functionality, sehingga API testing penting untuk memverifikasi security aspects seperti authentication, authorization, data encryption, dan input validation.</p>
+
+                <div class="highlight-box">
+                    <p><strong>ROI:</strong> Investment dalam API testing memberikan return yang tinggi karena bugs yang ditemukan di level API jauh lebih murah untuk diperbaiki dibanding bugs di production.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Tools untuk API Testing</h2>
+                
+                <h3>Postman</h3>
+                <p>Postman adalah tool paling populer untuk API testing dengan interface yang user-friendly. Postman menyediakan features lengkap untuk development, testing, dan documentation API.</p>
+
+                <p><strong>Fitur Utama Postman:</strong></p>
+                <ul>
+                    <li>Intuitive GUI untuk membuat dan mengirim HTTP requests</li>
+                    <li>Collections untuk organize related requests</li>
+                    <li>Environment variables untuk manage different environments</li>
+                    <li>Test scripts menggunakan JavaScript</li>
+                    <li>Automated testing dengan Newman (command-line runner)</li>
+                    <li>Mock servers untuk development</li>
+                    <li>API documentation generation</li>
+                    <li>Collaboration features untuk team</li>
+                    <li>Pre-request scripts untuk setup</li>
+                    <li>Response visualization (JSON, XML, HTML)</li>
+                </ul>
+
+                <p><strong>Keunggulan Postman:</strong></p>
+                <ul>
+                    <li>Free untuk individual use dengan features yang powerful</li>
+                    <li>Easy to learn dengan learning curve yang rendah</li>
+                    <li>Cross-platform (Windows, Mac, Linux)</li>
+                    <li>Large community dan extensive documentation</li>
+                    <li>Integration dengan CI/CD pipelines</li>
+                </ul>
+
+                <h3>SoapUI</h3>
+                <p>SoapUI adalah tool untuk testing SOAP dan REST APIs dengan focus pada functional testing, security testing, dan load testing.</p>
+
+                <p><strong>Fitur Utama SoapUI:</strong></p>
+                <ul>
+                    <li>Support untuk SOAP dan REST APIs</li>
+                    <li>Drag-and-drop test creation</li>
+                    <li>Data-driven testing</li>
+                    <li>Security testing (SQL injection, XSS)</li>
+                    <li>Load testing dan performance testing</li>
+                    <li>Assertion untuk validation</li>
+                    <li>Groovy scripting untuk advanced scenarios</li>
+                </ul>
+
+                <p><strong>Keunggulan SoapUI:</strong></p>
+                <ul>
+                    <li>Comprehensive testing capabilities (functional, security, load)</li>
+                    <li>Strong support untuk SOAP services</li>
+                    <li>Open source version available</li>
+                    <li>Enterprise features untuk professional use</li>
+                </ul>
+
+                <h3>Perbandingan: Postman vs SoapUI</h3>
+                <p><strong>Postman:</strong> Best untuk REST APIs, modern interface, easier to use, better untuk development dan quick testing.</p>
+                <p><strong>SoapUI:</strong> Best untuk SOAP APIs, comprehensive testing features, better untuk complex test scenarios dan security testing.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Konsep Dasar: Anatomi Request dan Response</h2>
+                
+                <h3>HTTP Request</h3>
+                <p>HTTP Request adalah message yang dikirim dari client ke server untuk request data atau action. Request terdiri dari beberapa komponen:</p>
+
+                <h4>1. HTTP Method</h4>
+                <p>Method menentukan jenis operasi yang akan dilakukan:</p>
+                <ul>
+                    <li><strong>GET:</strong> Retrieve data (read operation)</li>
+                    <li><strong>POST:</strong> Create new resource</li>
+                    <li><strong>PUT:</strong> Update entire resource</li>
+                    <li><strong>PATCH:</strong> Update partial resource</li>
+                    <li><strong>DELETE:</strong> Delete resource</li>
+                </ul>
+
+                <h4>2. URL/Endpoint</h4>
+                <p>URL menentukan resource yang akan diakses. Contoh:</p>
+                <ul>
+                    <li>https://api.example.com/users</li>
+                    <li>https://api.example.com/users/123</li>
+                    <li>https://api.example.com/products?category=electronics</li>
+                </ul>
+
+                <h4>3. Headers</h4>
+                <p>Headers berisi metadata tentang request:</p>
+                <ul>
+                    <li><strong>Content-Type:</strong> Format data yang dikirim (application/json, application/xml)</li>
+                    <li><strong>Authorization:</strong> Token untuk authentication (Bearer token, API key)</li>
+                    <li><strong>Accept:</strong> Format response yang diinginkan</li>
+                    <li><strong>User-Agent:</strong> Informasi tentang client</li>
+                </ul>
+
+                <h4>4. Body</h4>
+                <p>Body berisi data yang dikirim ke server (untuk POST, PUT, PATCH requests). Format umum adalah JSON atau XML.</p>
+
+                <p><strong>Contoh Request Body (JSON):</strong></p>
+                <pre><code>{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30
+}</code></pre>
+
+                <h4>5. Query Parameters</h4>
+                <p>Parameters yang ditambahkan di URL untuk filtering atau pagination:</p>
+                <pre><code>GET https://api.example.com/products?category=electronics&page=1&limit=10</code></pre>
+
+                <h3>HTTP Response</h3>
+                <p>HTTP Response adalah message yang dikirim dari server ke client sebagai jawaban dari request. Response terdiri dari:</p>
+
+                <h4>1. Status Code</h4>
+                <p>Status code mengindikasikan hasil dari request:</p>
+                <ul>
+                    <li><strong>2xx Success:</strong> 200 OK, 201 Created, 204 No Content</li>
+                    <li><strong>3xx Redirection:</strong> 301 Moved Permanently, 302 Found</li>
+                    <li><strong>4xx Client Error:</strong> 400 Bad Request, 401 Unauthorized, 404 Not Found</li>
+                    <li><strong>5xx Server Error:</strong> 500 Internal Server Error, 503 Service Unavailable</li>
+                </ul>
+
+                <h4>2. Response Headers</h4>
+                <p>Headers berisi metadata tentang response:</p>
+                <ul>
+                    <li><strong>Content-Type:</strong> Format response data</li>
+                    <li><strong>Content-Length:</strong> Ukuran response body</li>
+                    <li><strong>Set-Cookie:</strong> Cookie yang di-set oleh server</li>
+                    <li><strong>Cache-Control:</strong> Caching directives</li>
+                </ul>
+
+                <h4>3. Response Body</h4>
+                <p>Body berisi data yang dikirim dari server. Format umum adalah JSON.</p>
+
+                <p><strong>Contoh Response Body (JSON):</strong></p>
+                <pre><code>{
+    "id": 123,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "age": 30,
+    "created_at": "2025-10-29T12:00:00Z"
+}</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>REST API Convention:</strong> REST APIs menggunakan HTTP methods secara semantic: GET untuk read, POST untuk create, PUT/PATCH untuk update, DELETE untuk delete. Status codes juga digunakan secara konsisten untuk indicate hasil operasi.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Operasi Dasar di Postman</h2>
+                
+                <h3>Setup dan Interface</h3>
+                <p><strong>Installation:</strong></p>
+                <ol>
+                    <li>Download Postman dari https://www.postman.com/downloads/</li>
+                    <li>Install aplikasi (tersedia untuk Windows, Mac, Linux)</li>
+                    <li>Create account atau sign in</li>
+                    <li>Explore workspace dan interface</li>
+                </ol>
+
+                <p><strong>Interface Utama:</strong></p>
+                <ul>
+                    <li><strong>Sidebar:</strong> Collections, Environments, History</li>
+                    <li><strong>Request Builder:</strong> Method, URL, Params, Headers, Body</li>
+                    <li><strong>Response Panel:</strong> Body, Headers, Cookies, Test Results</li>
+                </ul>
+
+                <h3>Membuat dan Mengirim Request</h3>
+                
+                <h4>Langkah-langkah Dasar:</h4>
+                <ol>
+                    <li>Click "New" atau "+" untuk membuat request baru</li>
+                    <li>Pilih HTTP method (GET, POST, PUT, DELETE)</li>
+                    <li>Masukkan URL endpoint</li>
+                    <li>Configure headers jika diperlukan</li>
+                    <li>Add request body untuk POST/PUT (pilih format: JSON, form-data, etc)</li>
+                    <li>Click "Send" button</li>
+                    <li>Observe response di panel bawah</li>
+                </ol>
+
+                <h3>Working with Collections</h3>
+                <p>Collections adalah cara untuk organize related requests:</p>
+                <ul>
+                    <li>Create collection untuk group requests by feature atau module</li>
+                    <li>Save requests ke collection untuk reuse</li>
+                    <li>Add folders untuk organize hierarchically</li>
+                    <li>Share collections dengan team members</li>
+                    <li>Run entire collection untuk automated testing</li>
+                </ul>
+
+                <h3>Environment Variables</h3>
+                <p>Environment variables memudahkan management different environments (dev, staging, production):</p>
+                <ul>
+                    <li>Create environment (e.g., "Development", "Production")</li>
+                    <li>Add variables (base_url, api_key, auth_token)</li>
+                    <li>Use variables dengan syntax {{variable_name}}</li>
+                    <li>Switch environments dengan dropdown di top-right</li>
+                </ul>
+
+                <p><strong>Contoh Environment Variables:</strong></p>
+                <pre><code>// Development Environment
+base_url: https://api-dev.example.com
+api_key: dev_key_12345
+
+// Production Environment
+base_url: https://api.example.com
+api_key: prod_key_67890</code></pre>
+
+                <h3>Writing Tests</h3>
+                <p>Postman allows writing test scripts dalam tab "Tests" menggunakan JavaScript:</p>
+
+                <p><strong>Contoh Test Script:</strong></p>
+                <pre><code>// Test status code
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+// Test response time
+pm.test("Response time is less than 500ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+
+// Test response body
+pm.test("Response has user data", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('name');
+    pm.expect(jsonData.name).to.eql('John Doe');
+});</code></pre>
+            </section>
+
+            <section class="content-section">
+                <h2>Studi Kasus: Testing dengan API Publik</h2>
+                
+                <h3>Contoh 1: GET Request - JSONPlaceholder API</h3>
+                <p>JSONPlaceholder adalah fake REST API untuk testing dan prototyping.</p>
+
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/users</p>
+
+                <p><strong>Langkah Testing di Postman:</strong></p>
+                <ol>
+                    <li>Method: GET</li>
+                    <li>URL: https://jsonplaceholder.typicode.com/users</li>
+                    <li>Click Send</li>
+                </ol>
+
+                <p><strong>Expected Response:</strong></p>
+                <pre><code>[
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        ...
+    },
+    ...
+]</code></pre>
+
+                <p><strong>Test Script:</strong></p>
+                <pre><code>pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response is an array", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an('array');
+});
+
+pm.test("Array has 10 users", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.lengthOf(10);
+});
+
+pm.test("First user has required fields", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData[0]).to.have.property('id');
+    pm.expect(jsonData[0]).to.have.property('name');
+    pm.expect(jsonData[0]).to.have.property('email');
+});</code></pre>
+
+                <h3>Contoh 2: GET Request dengan Parameter - Specific User</h3>
+                
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/users/1</p>
+
+                <p><strong>Langkah Testing:</strong></p>
+                <ol>
+                    <li>Method: GET</li>
+                    <li>URL: https://jsonplaceholder.typicode.com/users/1</li>
+                    <li>Click Send</li>
+                </ol>
+
+                <p><strong>Test Script:</strong></p>
+                <pre><code>pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("User ID is 1", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.id).to.eql(1);
+});
+
+pm.test("User has name", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.name).to.exist;
+    pm.expect(jsonData.name).to.be.a('string');
+});</code></pre>
+
+                <h3>Contoh 3: POST Request - Create New Post</h3>
+                
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts</p>
+
+                <p><strong>Langkah Testing:</strong></p>
+                <ol>
+                    <li>Method: POST</li>
+                    <li>URL: https://jsonplaceholder.typicode.com/posts</li>
+                    <li>Headers: Content-Type: application/json</li>
+                    <li>Body (raw JSON):</li>
+                </ol>
+
+                <pre><code>{
+    "title": "Test Post",
+    "body": "This is a test post content",
+    "userId": 1
+}</code></pre>
+
+                <p><strong>Expected Response (Status: 201 Created):</strong></p>
+                <pre><code>{
+    "id": 101,
+    "title": "Test Post",
+    "body": "This is a test post content",
+    "userId": 1
+}</code></pre>
+
+                <p><strong>Test Script:</strong></p>
+                <pre><code>pm.test("Status code is 201", function () {
+    pm.response.to.have.status(201);
+});
+
+pm.test("Post was created", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('id');
+    pm.expect(jsonData.id).to.be.a('number');
+});
+
+pm.test("Post has correct data", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.title).to.eql('Test Post');
+    pm.expect(jsonData.userId).to.eql(1);
+});</code></pre>
+
+                <h3>Contoh 4: PUT Request - Update Post</h3>
+                
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+
+                <p><strong>Langkah Testing:</strong></p>
+                <ol>
+                    <li>Method: PUT</li>
+                    <li>URL: https://jsonplaceholder.typicode.com/posts/1</li>
+                    <li>Headers: Content-Type: application/json</li>
+                    <li>Body:</li>
+                </ol>
+
+                <pre><code>{
+    "id": 1,
+    "title": "Updated Title",
+    "body": "Updated content",
+    "userId": 1
+}</code></pre>
+
+                <h3>Contoh 5: DELETE Request - Delete Post</h3>
+                
+                <p><strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts/1</p>
+
+                <p><strong>Langkah Testing:</strong></p>
+                <ol>
+                    <li>Method: DELETE</li>
+                    <li>URL: https://jsonplaceholder.typicode.com/posts/1</li>
+                    <li>Click Send</li>
+                </ol>
+
+                <p><strong>Expected Response:</strong> Status 200 OK atau 204 No Content</p>
+
+                <p><strong>Test Script:</strong></p>
+                <pre><code>pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response confirms deletion", function () {
+    // JSONPlaceholder returns empty object on delete
+    var jsonData = pm.response.json();
+    pm.expect(Object.keys(jsonData).length).to.eql(0);
+});</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Practice:</strong> JSONPlaceholder (https://jsonplaceholder.typicode.com/) dan ReqRes (https://reqres.in/) adalah API publik yang sangat baik untuk learning dan practice API testing. Keduanya menyediakan fake data dan support semua HTTP methods.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>

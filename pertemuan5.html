@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 5 - Pengantar Unit Testing | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 5: Pengantar Unit Testing</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html" class="active">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Definisi Unit Testing</h2>
+                
+                <h3>Apa itu Unit Testing?</h3>
+                <p>Unit Testing adalah metode testing yang menguji unit atau komponen terkecil dari perangkat lunak secara individual dan terisolasi dari bagian lain. Unit yang dimaksud biasanya adalah fungsi, method, atau class individual dalam kode program. Tujuan utama unit testing adalah memverifikasi bahwa setiap unit bekerja dengan benar sesuai dengan spesifikasi yang diharapkan.</p>
+
+                <p><strong>Karakteristik Unit Testing:</strong></p>
+                <ul>
+                    <li>Menguji unit code secara isolated (terisolasi)</li>
+                    <li>Biasanya dilakukan oleh developer yang menulis kode</li>
+                    <li>Automated dan dapat dijalankan berulang kali</li>
+                    <li>Eksekusi cepat (dalam milidetik)</li>
+                    <li>Tidak memerlukan external dependencies (database, API, file system)</li>
+                    <li>Menggunakan mocking/stubbing untuk dependencies</li>
+                </ul>
+
+                <h3>Scope Unit Testing</h3>
+                <p>Unit testing berfokus pada testing logic internal dari unit code:</p>
+                <ul>
+                    <li>Input validation dan edge cases</li>
+                    <li>Business logic dan kalkulasi</li>
+                    <li>Return values dan output</li>
+                    <li>Error handling dan exception</li>
+                    <li>Conditional statements dan loops</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Analogi:</strong> Unit testing seperti memeriksa setiap komponen mobil (mesin, rem, lampu) secara terpisah sebelum merakit mobil lengkap. Ini memastikan setiap bagian berfungsi dengan baik sebelum diintegrasikan.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Keunggulan Unit Testing</h2>
+                
+                <h3>Mengapa Unit Testing Penting?</h3>
+                <p>Unit testing memberikan berbagai manfaat penting dalam software development:</p>
+
+                <h4>1. Early Bug Detection</h4>
+                <p>Unit testing memungkinkan developer menemukan bug di tahap awal development. Semakin awal bug ditemukan, semakin murah biaya untuk memperbaikinya. Bug yang ditemukan di tahap production bisa 10-100x lebih mahal untuk diperbaiki dibanding di tahap development.</p>
+
+                <h4>2. Code Quality Improvement</h4>
+                <p>Menulis unit test mendorong developer untuk menulis kode yang lebih modular, loosely coupled, dan maintainable. Code yang mudah di-test biasanya adalah code yang well-designed dengan separation of concerns yang baik.</p>
+
+                <h4>3. Documentation</h4>
+                <p>Unit test berfungsi sebagai living documentation yang menunjukkan bagaimana code seharusnya digunakan. Developer baru dapat memahami functionality dengan membaca test cases.</p>
+
+                <h4>4. Refactoring Confidence</h4>
+                <p>Dengan unit test yang comprehensive, developer dapat melakukan refactoring dengan percaya diri. Jika setelah refactoring semua test masih pass, kemungkinan besar refactoring tidak merusak functionality existing.</p>
+
+                <h4>5. Regression Prevention</h4>
+                <p>Unit test mencegah regression bugs (bug yang muncul kembali setelah diperbaiki). Setiap kali ada perubahan code, unit test dapat dijalankan untuk memastikan functionality existing tidak rusak.</p>
+
+                <h4>6. Faster Development</h4>
+                <p>Meskipun menulis test memerlukan waktu, dalam jangka panjang unit testing mempercepat development karena mengurangi debugging time dan mencegah bug masuk ke production.</p>
+
+                <h4>7. Better Design</h4>
+                <p>Test-Driven Development (TDD) mendorong developer untuk memikirkan design sebelum implementasi, menghasilkan architecture yang lebih baik.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Best Practice:</strong> Idealnya, unit test ditulis bersamaan dengan production code atau bahkan sebelumnya (TDD). Ratio code coverage yang baik adalah minimal 70-80%.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Framework Unit Testing Populer</h2>
+                
+                <h3>JUnit (Java)</h3>
+                <p>JUnit adalah framework unit testing paling populer untuk bahasa Java. Saat ini versi terbaru adalah JUnit 5 (JUnit Jupiter).</p>
+                
+                <p><strong>Fitur Utama:</strong></p>
+                <ul>
+                    <li>Annotations untuk mendefinisikan test methods (@Test, @BeforeEach, @AfterEach)</li>
+                    <li>Assertions untuk verifikasi hasil (assertEquals, assertTrue, assertThrows)</li>
+                    <li>Test lifecycle management</li>
+                    <li>Parameterized tests</li>
+                    <li>Test suite dan grouping</li>
+                    <li>Integration dengan build tools (Maven, Gradle)</li>
+                </ul>
+
+                <p><strong>Contoh Syntax:</strong></p>
+                <pre><code>import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class CalculatorTest {
+    @Test
+    void testAddition() {
+        Calculator calc = new Calculator();
+        int result = calc.add(5, 3);
+        assertEquals(8, result);
+    }
+}</code></pre>
+
+                <h3>Jest (JavaScript)</h3>
+                <p>Jest adalah testing framework yang dikembangkan oleh Facebook, populer untuk testing JavaScript dan TypeScript, terutama untuk React applications.</p>
+                
+                <p><strong>Fitur Utama:</strong></p>
+                <ul>
+                    <li>Zero configuration - works out of the box</li>
+                    <li>Snapshot testing untuk UI components</li>
+                    <li>Mock functions dan modules</li>
+                    <li>Code coverage reporting built-in</li>
+                    <li>Fast parallel test execution</li>
+                    <li>Great error messages</li>
+                </ul>
+
+                <p><strong>Contoh Syntax:</strong></p>
+                <pre><code>describe('Calculator', () => {
+    test('adds 5 + 3 to equal 8', () => {
+        const result = add(5, 3);
+        expect(result).toBe(8);
+    });
+    
+    test('subtracts 10 - 3 to equal 7', () => {
+        const result = subtract(10, 3);
+        expect(result).toBe(7);
+    });
+});</code></pre>
+
+                <h3>Pytest (Python)</h3>
+                <p>Pytest adalah testing framework untuk Python yang powerful dan mudah digunakan. Pytest dapat menjalankan unittest dan nose test, serta test yang ditulis dengan pytest style.</p>
+                
+                <p><strong>Fitur Utama:</strong></p>
+                <ul>
+                    <li>Simple syntax dengan assert statements biasa</li>
+                    <li>Fixtures untuk test setup dan teardown</li>
+                    <li>Parametrization untuk data-driven testing</li>
+                    <li>Plugin ecosystem yang rich</li>
+                    <li>Detailed assertion introspection</li>
+                    <li>Support untuk unittest dan doctest</li>
+                </ul>
+
+                <p><strong>Contoh Syntax:</strong></p>
+                <pre><code>def test_addition():
+    result = add(5, 3)
+    assert result == 8
+
+def test_subtraction():
+    result = subtract(10, 3)
+    assert result == 7
+    
+def test_division_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        divide(10, 0)</code></pre>
+
+                <h3>Perbandingan Framework</h3>
+                <p><strong>JUnit:</strong> Best untuk Java ecosystem, mature dan well-documented</p>
+                <p><strong>Jest:</strong> Best untuk JavaScript/TypeScript dan React apps, fast dan feature-rich</p>
+                <p><strong>Pytest:</strong> Best untuk Python, simple syntax dan powerful features</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Struktur Test: Pola AAA</h2>
+                
+                <h3>Arrange, Act, Assert (AAA)</h3>
+                <p>AAA adalah pola standar untuk menulis unit test yang clean dan readable. Setiap test case dibagi menjadi tiga bagian yang jelas:</p>
+
+                <h4>1. Arrange (Setup)</h4>
+                <p>Bagian ini menyiapkan preconditions dan inputs untuk test:</p>
+                <ul>
+                    <li>Inisialisasi objects yang akan ditest</li>
+                    <li>Setup test data</li>
+                    <li>Configure mocks dan stubs</li>
+                    <li>Set initial state</li>
+                </ul>
+
+                <h4>2. Act (Execute)</h4>
+                <p>Bagian ini menjalankan action atau method yang akan ditest:</p>
+                <ul>
+                    <li>Call method atau function under test</li>
+                    <li>Hanya satu action utama per test</li>
+                    <li>Capture hasil atau output</li>
+                </ul>
+
+                <h4>3. Assert (Verify)</h4>
+                <p>Bagian ini memverifikasi bahwa hasil sesuai dengan expected:</p>
+                <ul>
+                    <li>Verify return values</li>
+                    <li>Check state changes</li>
+                    <li>Verify method calls</li>
+                    <li>Assert exceptions jika applicable</li>
+                </ul>
+
+                <h3>Contoh Implementasi AAA</h3>
+
+                <p><strong>Contoh 1: Python dengan Pytest</strong></p>
+                <pre><code>def test_calculate_bmi():
+    # Arrange
+    height = 1.75  # meter
+    weight = 70    # kg
+    calculator = BMICalculator()
+    
+    # Act
+    result = calculator.calculate(height, weight)
+    
+    # Assert
+    assert result == 22.86  # 70 / (1.75^2)
+    assert 18.5 <= result <= 24.9  # Normal range</code></pre>
+
+                <p><strong>Contoh 2: JavaScript dengan Jest</strong></p>
+                <pre><code>test('should calculate BMI correctly', () => {
+    // Arrange
+    const height = 1.75;
+    const weight = 70;
+    const calculator = new BMICalculator();
+    
+    // Act
+    const result = calculator.calculate(height, weight);
+    
+    // Assert
+    expect(result).toBeCloseTo(22.86, 2);
+    expect(result).toBeGreaterThanOrEqual(18.5);
+});</code></pre>
+
+                <p><strong>Contoh 3: Java dengan JUnit</strong></p>
+                <pre><code>@Test
+void shouldCalculateBMICorrectly() {
+    // Arrange
+    double height = 1.75;
+    double weight = 70;
+    BMICalculator calculator = new BMICalculator();
+    
+    // Act
+    double result = calculator.calculate(height, weight);
+    
+    // Assert
+    assertEquals(22.86, result, 0.01);
+    assertTrue(result >= 18.5 && result <= 24.9);
+}</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Tips:</strong> Gunakan blank lines untuk memisahkan ketiga bagian AAA agar test lebih readable. Beberapa developer juga menambahkan comment // Arrange, // Act, // Assert untuk kejelasan.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Assertions</h2>
+                
+                <h3>Apa itu Assertions?</h3>
+                <p>Assertions adalah statements yang memverifikasi bahwa kondisi tertentu adalah true. Jika assertion fails, test akan fail. Assertions adalah bagian inti dari unit testing yang menentukan apakah test pass atau fail.</p>
+
+                <h3>Jenis-Jenis Assertions Umum</h3>
+
+                <h4>1. Equality Assertions</h4>
+                <p>Memverifikasi bahwa dua nilai adalah sama:</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertEquals(expected, actual)</li>
+                    <li><strong>Jest:</strong> expect(actual).toBe(expected) atau expect(actual).toEqual(expected)</li>
+                    <li><strong>Pytest:</strong> assert actual == expected</li>
+                </ul>
+
+                <h4>2. Boolean Assertions</h4>
+                <p>Memverifikasi kondisi boolean:</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertTrue(condition), assertFalse(condition)</li>
+                    <li><strong>Jest:</strong> expect(condition).toBeTruthy(), expect(condition).toBeFalsy()</li>
+                    <li><strong>Pytest:</strong> assert condition, assert not condition</li>
+                </ul>
+
+                <h4>3. Null/Undefined Assertions</h4>
+                <p>Memverifikasi nilai null atau undefined:</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertNull(value), assertNotNull(value)</li>
+                    <li><strong>Jest:</strong> expect(value).toBeNull(), expect(value).toBeUndefined()</li>
+                    <li><strong>Pytest:</strong> assert value is None, assert value is not None</li>
+                </ul>
+
+                <h4>4. Collection Assertions</h4>
+                <p>Memverifikasi collections (array, list):</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertArrayEquals(expected, actual)</li>
+                    <li><strong>Jest:</strong> expect(array).toContain(item), expect(array).toHaveLength(n)</li>
+                    <li><strong>Pytest:</strong> assert item in list, assert len(list) == n</li>
+                </ul>
+
+                <h4>5. Exception Assertions</h4>
+                <p>Memverifikasi bahwa exception di-throw:</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertThrows(ExceptionType.class, () -> method())</li>
+                    <li><strong>Jest:</strong> expect(() => method()).toThrow(ErrorType)</li>
+                    <li><strong>Pytest:</strong> with pytest.raises(ExceptionType): method()</li>
+                </ul>
+
+                <h4>6. Floating Point Assertions</h4>
+                <p>Memverifikasi floating point dengan tolerance:</p>
+                <ul>
+                    <li><strong>JUnit:</strong> assertEquals(expected, actual, delta)</li>
+                    <li><strong>Jest:</strong> expect(actual).toBeCloseTo(expected, numDigits)</li>
+                    <li><strong>Pytest:</strong> assert abs(actual - expected) < tolerance</li>
+                </ul>
+
+                <h3>Best Practices untuk Assertions</h3>
+                <ul>
+                    <li>Satu test sebaiknya fokus pada satu assertion utama</li>
+                    <li>Gunakan assertion yang paling spesifik (toBe vs toEqual)</li>
+                    <li>Tambahkan custom error messages untuk clarity</li>
+                    <li>Avoid multiple assertions yang tidak related dalam satu test</li>
+                    <li>Assert both positive dan negative cases</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Studi Kasus: Unit Test untuk BMI Calculator</h2>
+                
+                <h3>Contoh dengan Pytest (Python)</h3>
+                
+                <p><strong>Production Code (bmi_calculator.py):</strong></p>
+                <pre><code>class BMICalculator:
+    def calculate(self, height_cm, weight_kg):
+        if height_cm <= 0 or weight_kg <= 0:
+            raise ValueError("Height and weight must be positive")
+        
+        height_m = height_cm / 100
+        bmi = weight_kg / (height_m ** 2)
+        return round(bmi, 2)
+    
+    def get_category(self, bmi):
+        if bmi < 18.5:
+            return "Underweight"
+        elif 18.5 <= bmi < 25:
+            return "Normal Weight"
+        elif 25 <= bmi < 30:
+            return "Overweight"
+        else:
+            return "Obese"</code></pre>
+
+                <p><strong>Test Code (test_bmi_calculator.py):</strong></p>
+                <pre><code>import pytest
+from bmi_calculator import BMICalculator
+
+def test_calculate_normal_weight():
+    # Arrange
+    calculator = BMICalculator()
+    height = 170  # cm
+    weight = 65   # kg
+    
+    # Act
+    result = calculator.calculate(height, weight)
+    
+    # Assert
+    assert result == 22.49
+
+def test_calculate_underweight():
+    # Arrange
+    calculator = BMICalculator()
+    
+    # Act
+    result = calculator.calculate(170, 50)
+    
+    # Assert
+    assert result == 17.30
+    assert calculator.get_category(result) == "Underweight"
+
+def test_calculate_overweight():
+    # Arrange
+    calculator = BMICalculator()
+    
+    # Act
+    result = calculator.calculate(170, 80)
+    
+    # Assert
+    assert result == 27.68
+    assert calculator.get_category(result) == "Overweight"
+
+def test_negative_height_raises_error():
+    # Arrange
+    calculator = BMICalculator()
+    
+    # Act & Assert
+    with pytest.raises(ValueError):
+        calculator.calculate(-170, 65)
+
+def test_zero_weight_raises_error():
+    # Arrange
+    calculator = BMICalculator()
+    
+    # Act & Assert
+    with pytest.raises(ValueError):
+        calculator.calculate(170, 0)
+
+def test_get_category_boundaries():
+    # Arrange
+    calculator = BMICalculator()
+    
+    # Act & Assert
+    assert calculator.get_category(18.4) == "Underweight"
+    assert calculator.get_category(18.5) == "Normal Weight"
+    assert calculator.get_category(24.9) == "Normal Weight"
+    assert calculator.get_category(25.0) == "Overweight"
+    assert calculator.get_category(29.9) == "Overweight"
+    assert calculator.get_category(30.0) == "Obese"</code></pre>
+
+                <p><strong>Menjalankan Test:</strong></p>
+                <pre><code># Install pytest
+pip install pytest
+
+# Run all tests
+pytest test_bmi_calculator.py
+
+# Run with coverage
+pytest --cov=bmi_calculator test_bmi_calculator.py
+
+# Run with verbose output
+pytest -v test_bmi_calculator.py</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Test Coverage:</strong> Contoh di atas mencakup happy path (normal cases), edge cases (boundary values), dan error cases (invalid inputs). Ini adalah best practice untuk comprehensive unit testing.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>

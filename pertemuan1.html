@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1 - Strategi Testing | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 1: Strategi Testing</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html" class="active">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Review Pengenalan Testing</h2>
+                
+                <h3>Apa itu Testing?</h3>
+                <p>Testing adalah proses evaluasi sistem atau komponennya dengan tujuan untuk menemukan apakah sistem tersebut memenuhi persyaratan yang ditentukan atau tidak. Testing merupakan proses sistematis untuk mengidentifikasi kesalahan, bug, atau cacat dalam perangkat lunak yang sedang dikembangkan.</p>
+
+                <h3>Tujuan Testing</h3>
+                <p>Testing memiliki beberapa tujuan utama dalam pengembangan perangkat lunak:</p>
+                <ul>
+                    <li>Menemukan defect atau bug dalam perangkat lunak sebelum dirilis ke pengguna</li>
+                    <li>Memastikan perangkat lunak berfungsi sesuai dengan spesifikasi dan kebutuhan pengguna</li>
+                    <li>Meningkatkan kualitas produk perangkat lunak secara keseluruhan</li>
+                    <li>Memverifikasi bahwa sistem memenuhi standar dan regulasi yang berlaku</li>
+                    <li>Memberikan kepercayaan kepada stakeholder tentang kualitas produk</li>
+                    <li>Mengurangi risiko kegagalan sistem di lingkungan produksi</li>
+                </ul>
+
+                <h3>Pentingnya Testing dalam Siklus Pengembangan Perangkat Lunak</h3>
+                <p>Testing merupakan bagian integral dari Software Development Life Cycle (SDLC). Tanpa testing yang memadai, perangkat lunak yang dirilis dapat mengandung bug kritis yang dapat menyebabkan:</p>
+                <ul>
+                    <li>Kerugian finansial bagi perusahaan dan pengguna</li>
+                    <li>Kerusakan reputasi produk dan organisasi</li>
+                    <li>Masalah keamanan dan privasi data pengguna</li>
+                    <li>Pengalaman pengguna yang buruk</li>
+                    <li>Biaya perbaikan yang lebih tinggi jika bug ditemukan setelah produk dirilis</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>Catatan Penting:</strong> Semakin awal bug ditemukan dalam siklus pengembangan, semakin rendah biaya untuk memperbaikinya. Testing yang dilakukan sejak tahap awal dapat menghemat waktu dan biaya secara signifikan.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Siklus Hidup Testing</h2>
+                <p>Siklus hidup testing mencakup beberapa tahapan penting yang harus dilakukan secara sistematis:</p>
+
+                <h3>1. Perencanaan Testing (Test Plan & Test Case)</h3>
+                <p>Tahap ini melibatkan pembuatan strategi testing yang komprehensif, termasuk:</p>
+                <ul>
+                    <li>Menentukan tujuan dan scope testing</li>
+                    <li>Mengidentifikasi sumber daya yang dibutuhkan (tim, tools, infrastruktur)</li>
+                    <li>Membuat jadwal testing</li>
+                    <li>Mendefinisikan kriteria entry dan exit untuk setiap tahap testing</li>
+                    <li>Menyusun test plan document yang mendokumentasikan seluruh strategi testing</li>
+                </ul>
+
+                <h3>2. Desain Kasus Uji</h3>
+                <p>Pada tahap ini, test case yang spesifik dirancang berdasarkan requirements dan test plan. Desain test case mencakup:</p>
+                <ul>
+                    <li>Identifikasi test scenario yang perlu diuji</li>
+                    <li>Pembuatan test case dengan input, expected output, dan pre-conditions</li>
+                    <li>Penentuan test data yang akan digunakan</li>
+                    <li>Prioritas test case berdasarkan risiko dan kepentingan fitur</li>
+                </ul>
+
+                <h3>3. Eksekusi Testing</h3>
+                <p>Tahap pelaksanaan testing dimana test case dijalankan pada sistem yang sedang diuji:</p>
+                <ul>
+                    <li>Menjalankan test case sesuai dengan test plan</li>
+                    <li>Mencatat hasil eksekusi (pass/fail)</li>
+                    <li>Melakukan regression testing jika ada perubahan kode</li>
+                    <li>Mendokumentasikan setiap bug atau defect yang ditemukan</li>
+                </ul>
+
+                <h3>4. Pelaporan Hasil Testing</h3>
+                <p>Hasil testing harus didokumentasikan dan dilaporkan kepada stakeholder:</p>
+                <ul>
+                    <li>Membuat bug report untuk setiap defect yang ditemukan</li>
+                    <li>Menyusun test summary report</li>
+                    <li>Melakukan tracking status bug (open, in progress, resolved, closed)</li>
+                    <li>Komunikasi hasil testing kepada development team dan management</li>
+                </ul>
+
+                <h3>5. Analisis Hasil dan Perbaikan</h3>
+                <p>Tahap akhir dimana hasil testing dianalisis untuk improvement:</p>
+                <ul>
+                    <li>Menganalisis pola bug dan akar penyebab masalah</li>
+                    <li>Evaluasi efektivitas strategi testing yang digunakan</li>
+                    <li>Memberikan rekomendasi untuk perbaikan proses</li>
+                    <li>Lessons learned untuk project berikutnya</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Klasifikasi Strategi Testing</h2>
+                <p>Strategi testing dapat diklasifikasikan berdasarkan beberapa kriteria:</p>
+
+                <h3>Berdasarkan Tingkat Abstraksi</h3>
+                
+                <h4>Unit Testing</h4>
+                <p>Testing yang dilakukan pada unit atau komponen terkecil dari perangkat lunak, biasanya function atau method individual. Unit testing memastikan bahwa setiap unit bekerja dengan benar secara terisolasi. Biasanya dilakukan oleh developer menggunakan framework seperti JUnit, Jest, atau Pytest.</p>
+
+                <h4>Integration Testing</h4>
+                <p>Testing yang dilakukan untuk memverifikasi interaksi antara berbagai modul atau komponen sistem. Integration testing memastikan bahwa modul-modul yang berbeda dapat bekerja sama dengan baik ketika diintegrasikan. Fokus pada interface antar modul dan aliran data.</p>
+
+                <h4>System Testing</h4>
+                <p>Testing yang dilakukan pada sistem secara keseluruhan untuk memverifikasi bahwa sistem memenuhi requirements yang ditentukan. System testing menguji sistem sebagai satu kesatuan utuh dalam lingkungan yang menyerupai produksi. Mencakup functional dan non-functional testing.</p>
+
+                <h4>Acceptance Testing</h4>
+                <p>Testing yang dilakukan untuk menentukan apakah sistem siap untuk dirilis dan memenuhi kebutuhan bisnis. Biasanya dilakukan oleh end-user atau client (User Acceptance Testing - UAT). Merupakan tahap akhir sebelum sistem go-live.</p>
+
+                <h3>Berdasarkan Fungsi</h3>
+                
+                <h4>Functional Testing</h4>
+                <p>Testing yang memverifikasi bahwa sistem berfungsi sesuai dengan spesifikasi fungsional. Fokus pada "apa yang dilakukan sistem" dengan menguji fitur dan fungsi sistem berdasarkan requirements document. Contoh: testing login, testing form submission, testing calculation.</p>
+
+                <h4>Non-Functional Testing</h4>
+                <p>Testing yang memverifikasi aspek non-fungsional dari sistem:</p>
+                <ul>
+                    <li><strong>Performance Testing:</strong> Menguji kecepatan, responsiveness, dan stabilitas sistem di bawah beban tertentu</li>
+                    <li><strong>Security Testing:</strong> Menguji keamanan sistem dari ancaman dan vulnerability</li>
+                    <li><strong>Usability Testing:</strong> Menguji kemudahan penggunaan sistem dari perspektif pengguna</li>
+                    <li><strong>Reliability Testing:</strong> Menguji konsistensi dan keandalan sistem dalam jangka waktu tertentu</li>
+                </ul>
+
+                <h3>Berdasarkan Struktur</h3>
+                
+                <h4>Black Box Testing</h4>
+                <p>Testing yang dilakukan tanpa mengetahui struktur internal atau kode program. Tester hanya fokus pada input dan output sistem. Pendekatan ini menguji fungsionalitas sistem dari perspektif pengguna eksternal. Tidak memerlukan pengetahuan programming untuk melakukan testing.</p>
+
+                <h4>White Box Testing</h4>
+                <p>Testing yang dilakukan dengan mengetahui struktur internal dan kode program. Tester menguji logic internal, alur program, dan kondisi-kondisi di dalam kode. Memerlukan pengetahuan programming dan akses ke source code. Contoh: code coverage testing, path testing.</p>
+
+                <h3>Berdasarkan Domain</h3>
+                <p>Testing khusus yang disesuaikan dengan domain atau karakteristik spesifik aplikasi:</p>
+                <ul>
+                    <li><strong>Security Testing:</strong> Fokus pada pengujian keamanan aplikasi, vulnerability assessment, penetration testing</li>
+                    <li><strong>Performance Testing:</strong> Load testing, stress testing, scalability testing untuk menguji performa sistem</li>
+                    <li><strong>Usability Testing:</strong> Menguji user experience dan ease of use aplikasi</li>
+                    <li><strong>Compatibility Testing:</strong> Menguji kompatibilitas sistem di berbagai platform, browser, atau device</li>
+                    <li><strong>Localization Testing:</strong> Menguji adaptasi aplikasi untuk berbagai bahasa dan regional settings</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Kesimpulan:</strong> Pemilihan strategi testing yang tepat sangat penting untuk memastikan kualitas perangkat lunak. Kombinasi berbagai jenis testing dari berbagai klasifikasi biasanya diperlukan untuk mencapai coverage yang komprehensif.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>

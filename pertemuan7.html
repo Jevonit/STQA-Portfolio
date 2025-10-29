@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 7 - Pengantar Selenium WebDriver | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 7: Pengantar Selenium WebDriver</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html" class="active">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Apa itu Selenium dan Selenium WebDriver?</h2>
+                
+                <h3>Selenium Suite</h3>
+                <p>Selenium adalah sekumpulan tools dan libraries yang digunakan untuk automation testing pada web applications. Selenium Suite terdiri dari beberapa komponen utama yang dapat digunakan untuk berbagai kebutuhan testing:</p>
+
+                <ul>
+                    <li><strong>Selenium IDE:</strong> Browser extension untuk record dan playback test scenarios</li>
+                    <li><strong>Selenium WebDriver:</strong> API untuk mengontrol browser secara programmatic</li>
+                    <li><strong>Selenium Grid:</strong> Tool untuk menjalankan test parallel di berbagai browser dan machines</li>
+                </ul>
+
+                <h3>Selenium WebDriver</h3>
+                <p>Selenium WebDriver adalah komponen utama dari Selenium yang menyediakan programming interface untuk berinteraksi dengan web browsers. WebDriver mengontrol browser dari perspektif pengguna, mensimulasikan tindakan nyata seperti clicking buttons, filling forms, dan navigating pages.</p>
+
+                <p><strong>Karakteristik Selenium WebDriver:</strong></p>
+                <ul>
+                    <li>Mengontrol browser secara native melalui browser drivers</li>
+                    <li>Support multiple programming languages (Python, Java, JavaScript, C#, Ruby)</li>
+                    <li>Support multiple browsers (Chrome, Firefox, Safari, Edge, Internet Explorer)</li>
+                    <li>Cross-platform (Windows, macOS, Linux)</li>
+                    <li>Open source dan free to use</li>
+                    <li>Active community dan extensive documentation</li>
+                </ul>
+
+                <h3>Bagaimana Selenium WebDriver Bekerja?</h3>
+                <p>WebDriver architecture terdiri dari tiga komponen utama:</p>
+                <ol>
+                    <li><strong>Test Script:</strong> Code yang ditulis menggunakan Selenium API dalam bahasa pilihan</li>
+                    <li><strong>WebDriver API:</strong> Interface yang mentranslate commands dari test script</li>
+                    <li><strong>Browser Driver:</strong> Executable yang berkomunikasi dengan browser (chromedriver, geckodriver, dll)</li>
+                    <li><strong>Browser:</strong> Browser yang akan dikontrol (Chrome, Firefox, dll)</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <p><strong>Catatan:</strong> Setiap browser memerlukan driver yang spesifik. ChromeDriver untuk Chrome, GeckoDriver untuk Firefox, EdgeDriver untuk Edge, dll. Driver ini harus compatible dengan versi browser yang terinstall.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Kenapa Harus Selenium?</h2>
+                
+                <h3>Keunggulan Selenium WebDriver</h3>
+                
+                <h4>1. Open Source dan Gratis</h4>
+                <p>Selenium adalah open source project tanpa biaya lisensi. Ini membuat Selenium accessible untuk individual developers, startups, dan enterprise companies.</p>
+
+                <h4>2. Multi-Browser Support</h4>
+                <p>Selenium mendukung semua major browsers, memungkinkan cross-browser testing untuk memastikan aplikasi bekerja consistent di berbagai browsers:</p>
+                <ul>
+                    <li>Google Chrome (ChromeDriver)</li>
+                    <li>Mozilla Firefox (GeckoDriver)</li>
+                    <li>Microsoft Edge (EdgeDriver)</li>
+                    <li>Safari (SafariDriver)</li>
+                    <li>Internet Explorer (IEDriver)</li>
+                    <li>Opera</li>
+                </ul>
+
+                <h4>3. Multi-Language Support</h4>
+                <p>Selenium WebDriver mendukung berbagai programming languages, memungkinkan tester menggunakan bahasa yang mereka kuasai:</p>
+                <ul>
+                    <li>Python (populer untuk scripting dan automation)</li>
+                    <li>Java (enterprise standard)</li>
+                    <li>JavaScript/Node.js (untuk web developers)</li>
+                    <li>C# (untuk .NET developers)</li>
+                    <li>Ruby (rapid development)</li>
+                </ul>
+
+                <h4>4. Cross-Platform</h4>
+                <p>Test scripts dapat dijalankan di berbagai operating systems tanpa perubahan significant: Windows, macOS, dan Linux.</p>
+
+                <h4>5. Framework Flexibility</h4>
+                <p>Selenium dapat diintegrasikan dengan berbagai testing frameworks dan tools:</p>
+                <ul>
+                    <li>Testing frameworks: pytest, unittest, TestNG, JUnit</li>
+                    <li>CI/CD tools: Jenkins, GitLab CI, GitHub Actions</li>
+                    <li>Reporting tools: Allure, ExtentReports</li>
+                    <li>Page Object Model implementation</li>
+                </ul>
+
+                <h4>6. Large Community</h4>
+                <p>Selenium memiliki community yang besar dan active, menyediakan extensive documentation, tutorials, plugins, dan support forums.</p>
+
+                <h4>7. Realistic User Simulation</h4>
+                <p>Selenium mensimulasikan user interactions secara realistic, memberikan confident bahwa aplikasi bekerja dari perspektif end-user.</p>
+
+                <h4>8. Parallel Test Execution</h4>
+                <p>Dengan Selenium Grid, tests dapat dijalankan parallel di berbagai browsers dan machines, significantly mengurangi test execution time.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Use Case:</strong> Selenium ideal untuk regression testing, cross-browser testing, end-to-end testing, dan automation testing yang memerlukan real browser interactions.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Instalasi Selenium dengan Python</h2>
+                
+                <h3>Prerequisites</h3>
+                <p>Sebelum instalasi, pastikan sudah terinstall:</p>
+                <ul>
+                    <li>Python (versi 3.7 atau lebih tinggi)</li>
+                    <li>pip (Python package installer)</li>
+                    <li>Web browser (Chrome atau Firefox recommended)</li>
+                </ul>
+
+                <h3>Langkah 1: Install Selenium Package</h3>
+                <p>Install Selenium menggunakan pip di command line atau terminal:</p>
+                <pre><code>pip install selenium</code></pre>
+
+                <p>Untuk install versi specific:</p>
+                <pre><code>pip install selenium==4.15.0</code></pre>
+
+                <p>Verify instalasi:</p>
+                <pre><code>pip show selenium</code></pre>
+
+                <h3>Langkah 2: Download Browser Driver</h3>
+                <p>Download driver yang sesuai dengan browser yang akan digunakan:</p>
+
+                <h4>Option A: Manual Download</h4>
+                <ul>
+                    <li><strong>ChromeDriver:</strong> https://chromedriver.chromium.org/downloads</li>
+                    <li><strong>GeckoDriver (Firefox):</strong> https://github.com/mozilla/geckodriver/releases</li>
+                    <li><strong>EdgeDriver:</strong> https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</li>
+                </ul>
+
+                <p>Pastikan download driver yang compatible dengan versi browser. Extract file dan simpan di PATH system atau di project directory.</p>
+
+                <h4>Option B: Automatic Management (Recommended)</h4>
+                <p>Install webdriver-manager untuk automatic driver management:</p>
+                <pre><code>pip install webdriver-manager</code></pre>
+
+                <p>Webdriver-manager akan automatically download dan setup driver yang tepat.</p>
+
+                <h3>Langkah 3: Verify Setup</h3>
+                <p>Test instalasi dengan simple script:</p>
+                <pre><code>from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+# Setup ChromeDriver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+# Open website
+driver.get("https://www.google.com")
+
+# Print title
+print(driver.title)
+
+# Close browser
+driver.quit()</code></pre>
+
+                <p>Jika script berhasil, browser akan terbuka, navigate ke Google, print title, kemudian close.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Tips:</strong> Gunakan webdriver-manager untuk development karena automatically handle driver updates. Untuk production, download specific driver version untuk consistency.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Open Browser dengan Selenium</h2>
+                
+                <h3>Basic Browser Operations</h3>
+
+                <h4>1. Initialize WebDriver</h4>
+                <p>Membuat instance dari WebDriver untuk browser tertentu:</p>
+
+                <pre><code># Chrome
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+# Firefox
+from webdriver_manager.firefox import GeckoDriverManager
+driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+
+# Edge
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))</code></pre>
+
+                <h4>2. Navigate ke URL</h4>
+                <pre><code>driver.get("https://www.saucedemo.com")
+
+# Alternative
+driver.get("https://example.com")</code></pre>
+
+                <h4>3. Browser Navigation</h4>
+                <pre><code># Navigate back
+driver.back()
+
+# Navigate forward
+driver.forward()
+
+# Refresh page
+driver.refresh()
+
+# Get current URL
+current_url = driver.current_url
+print(current_url)
+
+# Get page title
+title = driver.title
+print(title)</code></pre>
+
+                <h4>4. Window Management</h4>
+                <pre><code># Maximize window
+driver.maximize_window()
+
+# Set window size
+driver.set_window_size(1920, 1080)
+
+# Get window size
+size = driver.get_window_size()
+print(size)</code></pre>
+
+                <h4>5. Close Browser</h4>
+                <pre><code># Close current tab
+driver.close()
+
+# Close browser and end WebDriver session
+driver.quit()</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Best Practice:</strong> Selalu gunakan driver.quit() di akhir test untuk properly close browser dan release resources. Gunakan try-finally block atau context manager untuk ensure cleanup.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Interaksi dengan Element HTML</h2>
+                
+                <h3>Finding Elements (Locators)</h3>
+                <p>Selenium menyediakan berbagai strategies untuk menemukan elements di halaman:</p>
+
+                <h4>1. By ID</h4>
+                <pre><code>from selenium.webdriver.common.by import By
+
+element = driver.find_element(By.ID, "user-name")
+</code></pre>
+
+                <h4>2. By Name</h4>
+                <pre><code>element = driver.find_element(By.NAME, "username")</code></pre>
+
+                <h4>3. By Class Name</h4>
+                <pre><code>element = driver.find_element(By.CLASS_NAME, "btn_action")</code></pre>
+
+                <h4>4. By CSS Selector</h4>
+                <pre><code>element = driver.find_element(By.CSS_SELECTOR, "input.form_input")
+element = driver.find_element(By.CSS_SELECTOR, "#login-button")</code></pre>
+
+                <h4>5. By XPath</h4>
+                <pre><code>element = driver.find_element(By.XPATH, "//input[@id='user-name']")
+element = driver.find_element(By.XPATH, "//button[text()='Login']")</code></pre>
+
+                <h4>6. By Link Text</h4>
+                <pre><code>element = driver.find_element(By.LINK_TEXT, "Click here")</code></pre>
+
+                <h4>7. By Partial Link Text</h4>
+                <pre><code>element = driver.find_element(By.PARTIAL_LINK_TEXT, "Click")</code></pre>
+
+                <h3>Finding Multiple Elements</h3>
+                <pre><code>elements = driver.find_elements(By.CLASS_NAME, "inventory_item")
+print(f"Found {len(elements)} items")</code></pre>
+
+                <h3>Common Element Interactions</h3>
+
+                <h4>1. Sending Text to Input Fields</h4>
+                <pre><code>username_field = driver.find_element(By.ID, "user-name")
+username_field.send_keys("standard_user")
+
+password_field = driver.find_element(By.ID, "password")
+password_field.send_keys("secret_sauce")</code></pre>
+
+                <h4>2. Clicking Elements</h4>
+                <pre><code>login_button = driver.find_element(By.ID, "login-button")
+login_button.click()</code></pre>
+
+                <h4>3. Clearing Input Fields</h4>
+                <pre><code>username_field.clear()</code></pre>
+
+                <h4>4. Getting Element Text</h4>
+                <pre><code>error_message = driver.find_element(By.CLASS_NAME, "error-message-container")
+print(error_message.text)</code></pre>
+
+                <h4>5. Getting Attribute Values</h4>
+                <pre><code>element = driver.find_element(By.ID, "user-name")
+placeholder = element.get_attribute("placeholder")
+value = element.get_attribute("value")</code></pre>
+
+                <h4>6. Checking Element State</h4>
+                <pre><code># Check if displayed
+is_displayed = element.is_displayed()
+
+# Check if enabled
+is_enabled = element.is_enabled()
+
+# Check if selected (for checkboxes/radio buttons)
+is_selected = element.is_selected()</code></pre>
+
+                <h3>Waits (Explicit and Implicit)</h3>
+
+                <h4>Implicit Wait</h4>
+                <pre><code>driver.implicitly_wait(10)  # Wait up to 10 seconds for elements</code></pre>
+
+                <h4>Explicit Wait</h4>
+                <pre><code>from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Wait until element is clickable
+wait = WebDriverWait(driver, 10)
+element = wait.until(EC.element_to_be_clickable((By.ID, "login-button")))
+
+# Wait until element is visible
+element = wait.until(EC.visibility_of_element_located((By.ID, "user-name")))</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Best Practice:</strong> Prefer explicit waits over implicit waits untuk better control dan flexibility. Implicit waits apply globally dan dapat cause unexpected delays.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Contoh Testing SauceDemo</h2>
+                
+                <h3>Test Scenario untuk SauceDemo.com</h3>
+                <p>SauceDemo (https://www.saucedemo.com/) adalah demo e-commerce website yang dibuat khusus untuk testing practice.</p>
+
+                <h4>Test Scenario 1: Successful Login</h4>
+                <p><strong>Test Case ID:</strong> TC-SD-001</p>
+                <p><strong>Description:</strong> Verify user can login with valid credentials</p>
+                <p><strong>Steps:</strong></p>
+                <ol>
+                    <li>Navigate to https://www.saucedemo.com</li>
+                    <li>Enter username: "standard_user"</li>
+                    <li>Enter password: "secret_sauce"</li>
+                    <li>Click Login button</li>
+                    <li>Verify user is redirected to inventory page</li>
+                </ol>
+
+                <h4>Test Scenario 2: Login with Invalid Credentials</h4>
+                <p><strong>Test Case ID:</strong> TC-SD-002</p>
+                <p><strong>Description:</strong> Verify error message for invalid credentials</p>
+
+                <h4>Test Scenario 3: Add Product to Cart</h4>
+                <p><strong>Test Case ID:</strong> TC-SD-003</p>
+                <p><strong>Description:</strong> Verify user can add product to shopping cart</p>
+
+                <h3>Implementation dengan Selenium Python</h3>
+
+                <pre><code>from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+class TestSauceDemo:
+    def setup_method(self):
+        """Setup yang dijalankan sebelum setiap test"""
+        self.driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install())
+        )
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(10)
+        
+    def teardown_method(self):
+        """Cleanup yang dijalankan setelah setiap test"""
+        self.driver.quit()
+    
+    def test_successful_login(self):
+        """Test Case: Successful Login"""
+        # Navigate to SauceDemo
+        self.driver.get("https://www.saucedemo.com")
+        
+        # Enter username
+        username = self.driver.find_element(By.ID, "user-name")
+        username.send_keys("standard_user")
+        
+        # Enter password
+        password = self.driver.find_element(By.ID, "password")
+        password.send_keys("secret_sauce")
+        
+        # Click login button
+        login_button = self.driver.find_element(By.ID, "login-button")
+        login_button.click()
+        
+        # Verify redirect to inventory page
+        wait = WebDriverWait(self.driver, 10)
+        inventory = wait.until(
+            EC.presence_of_element_located((By.CLASS_NAME, "inventory_list"))
+        )
+        
+        # Assert current URL
+        assert "inventory.html" in self.driver.current_url
+        print("✓ Login successful test passed")
+    
+    def test_invalid_login(self):
+        """Test Case: Login with Invalid Credentials"""
+        self.driver.get("https://www.saucedemo.com")
+        
+        # Enter invalid credentials
+        self.driver.find_element(By.ID, "user-name").send_keys("invalid_user")
+        self.driver.find_element(By.ID, "password").send_keys("wrong_password")
+        self.driver.find_element(By.ID, "login-button").click()
+        
+        # Verify error message
+        error = self.driver.find_element(By.CSS_SELECTOR, "[data-test='error']")
+        assert error.is_displayed()
+        assert "Epic sadface" in error.text
+        print("✓ Invalid login test passed")
+    
+    def test_add_to_cart(self):
+        """Test Case: Add Product to Cart"""
+        # Login first
+        self.driver.get("https://www.saucedemo.com")
+        self.driver.find_element(By.ID, "user-name").send_keys("standard_user")
+        self.driver.find_element(By.ID, "password").send_keys("secret_sauce")
+        self.driver.find_element(By.ID, "login-button").click()
+        
+        # Wait for inventory page
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((By.CLASS_NAME, "inventory_list")))
+        
+        # Add first product to cart
+        add_to_cart = self.driver.find_element(
+            By.CSS_SELECTOR, 
+            ".inventory_item:first-child .btn_inventory"
+        )
+        add_to_cart.click()
+        
+        # Verify cart badge shows 1 item
+        cart_badge = self.driver.find_element(By.CLASS_NAME, "shopping_cart_badge")
+        assert cart_badge.text == "1"
+        print("✓ Add to cart test passed")
+    
+    def test_remove_from_cart(self):
+        """Test Case: Remove Product from Cart"""
+        # Login and add product
+        self.driver.get("https://www.saucedemo.com")
+        self.driver.find_element(By.ID, "user-name").send_keys("standard_user")
+        self.driver.find_element(By.ID, "password").send_keys("secret_sauce")
+        self.driver.find_element(By.ID, "login-button").click()
+        
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((By.CLASS_NAME, "inventory_list")))
+        
+        # Add product
+        self.driver.find_element(
+            By.CSS_SELECTOR, 
+            ".inventory_item:first-child .btn_inventory"
+        ).click()
+        
+        # Remove product
+        remove_button = self.driver.find_element(
+            By.CSS_SELECTOR,
+            ".inventory_item:first-child .btn_inventory"
+        )
+        remove_button.click()
+        
+        # Verify cart badge is not displayed
+        cart_badges = self.driver.find_elements(By.CLASS_NAME, "shopping_cart_badge")
+        assert len(cart_badges) == 0
+        print("✓ Remove from cart test passed")
+
+# Run tests
+if __name__ == "__main__":
+    test = TestSauceDemo()
+    
+    # Test 1
+    test.setup_method()
+    test.test_successful_login()
+    test.teardown_method()
+    
+    # Test 2
+    test.setup_method()
+    test.test_invalid_login()
+    test.teardown_method()
+    
+    # Test 3
+    test.setup_method()
+    test.test_add_to_cart()
+    test.teardown_method()
+    
+    # Test 4
+    test.setup_method()
+    test.test_remove_from_cart()
+    test.teardown_method()
+    
+    print("\n✓ All tests completed!")</code></pre>
+
+                <h3>Running Tests dengan Pytest</h3>
+                <pre><code># Install pytest
+pip install pytest
+
+# Run all tests
+pytest test_saucedemo.py -v
+
+# Run specific test
+pytest test_saucedemo.py::TestSauceDemo::test_successful_login -v
+
+# Run with HTML report
+pytest test_saucedemo.py --html=report.html</code></pre>
+
+                <div class="highlight-box">
+                    <p><strong>Page Object Model:</strong> Untuk project yang lebih besar, implement Page Object Model (POM) pattern untuk better maintainability dan reusability of code.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2 - UI/UX Testing | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 2: UI/UX Testing</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html" class="active">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Pengantar UI/UX Testing</h2>
+                
+                <h3>Perbedaan UI dan UX Testing</h3>
+                <p>UI (User Interface) Testing dan UX (User Experience) Testing adalah dua aspek berbeda namun saling berkaitan dalam pengujian perangkat lunak:</p>
+                
+                <h4>UI Testing</h4>
+                <p>UI Testing berfokus pada pengujian elemen visual dan interaktif dari antarmuka pengguna. Aspek yang diuji meliputi:</p>
+                <ul>
+                    <li>Layout dan desain visual aplikasi</li>
+                    <li>Konsistensi elemen UI (button, form, menu, icon)</li>
+                    <li>Responsivitas tampilan di berbagai ukuran layar dan device</li>
+                    <li>Kompatibilitas tampilan di berbagai browser</li>
+                    <li>Keterbacaan teks (font size, color contrast)</li>
+                    <li>Penempatan dan alignment elemen UI</li>
+                </ul>
+
+                <h4>UX Testing</h4>
+                <p>UX Testing berfokus pada pengujian pengalaman pengguna secara keseluruhan saat berinteraksi dengan aplikasi. Aspek yang diuji meliputi:</p>
+                <ul>
+                    <li>Kemudahan penggunaan aplikasi (ease of use)</li>
+                    <li>Alur kerja dan navigasi yang intuitif</li>
+                    <li>Efisiensi dalam menyelesaikan task</li>
+                    <li>Kepuasan pengguna terhadap aplikasi</li>
+                    <li>Aksesibilitas untuk berbagai jenis pengguna</li>
+                    <li>Error handling dan feedback yang jelas</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Perbedaan Utama:</strong> UI Testing menguji "bagaimana tampilan aplikasi", sementara UX Testing menguji "bagaimana pengalaman pengguna saat menggunakan aplikasi".</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Fokus UI Testing</h2>
+                
+                <h3>Konsistensi Visual</h3>
+                <p>Memastikan elemen-elemen UI konsisten di seluruh aplikasi:</p>
+                <ul>
+                    <li>Konsistensi color scheme dan branding</li>
+                    <li>Konsistensi typography (font family, size, weight)</li>
+                    <li>Konsistensi spacing dan padding</li>
+                    <li>Konsistensi style untuk elemen yang sama (button, form, card)</li>
+                    <li>Konsistensi icon dan imagery</li>
+                </ul>
+
+                <h3>Responsivitas</h3>
+                <p>Menguji tampilan aplikasi di berbagai ukuran layar:</p>
+                <ul>
+                    <li>Desktop (1920x1080, 1366x768, dll)</li>
+                    <li>Tablet (iPad, Android tablet)</li>
+                    <li>Mobile (berbagai ukuran smartphone)</li>
+                    <li>Orientasi portrait dan landscape</li>
+                    <li>Breakpoint untuk responsive design</li>
+                </ul>
+
+                <h3>Kompatibilitas</h3>
+                <p>Memastikan UI berfungsi dengan baik di berbagai platform:</p>
+                <ul>
+                    <li>Cross-browser testing (Chrome, Firefox, Safari, Edge)</li>
+                    <li>Cross-platform testing (Windows, macOS, Linux, iOS, Android)</li>
+                    <li>Versi browser yang berbeda</li>
+                    <li>Device dengan spesifikasi berbeda</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Fokus UX Testing</h2>
+                
+                <h3>Alur Kerja (User Flow)</h3>
+                <p>Menguji bagaimana pengguna menyelesaikan task dari awal hingga akhir:</p>
+                <ul>
+                    <li>Apakah alur task mudah dipahami dan diikuti?</li>
+                    <li>Apakah jumlah step yang diperlukan sudah optimal?</li>
+                    <li>Apakah ada jalan pintas untuk task yang sering dilakukan?</li>
+                    <li>Apakah pengguna bisa kembali ke step sebelumnya?</li>
+                    <li>Apakah progress user ditampilkan dengan jelas?</li>
+                </ul>
+
+                <h3>Kegunaan (Usability)</h3>
+                <p>Menguji kemudahan penggunaan aplikasi:</p>
+                <ul>
+                    <li>Apakah pengguna baru bisa menggunakan aplikasi tanpa tutorial?</li>
+                    <li>Berapa lama waktu yang dibutuhkan untuk menyelesaikan task?</li>
+                    <li>Berapa banyak error yang dilakukan pengguna?</li>
+                    <li>Apakah label dan instruction jelas dan mudah dipahami?</li>
+                    <li>Apakah sistem memberikan feedback yang memadai?</li>
+                </ul>
+
+                <h3>Aksesibilitas</h3>
+                <p>Memastikan aplikasi dapat digunakan oleh semua orang, termasuk pengguna dengan disabilitas:</p>
+                <ul>
+                    <li>Support untuk screen reader</li>
+                    <li>Keyboard navigation untuk pengguna yang tidak bisa menggunakan mouse</li>
+                    <li>Color contrast yang cukup untuk pengguna dengan low vision</li>
+                    <li>Alternative text untuk gambar</li>
+                    <li>Caption untuk video dan audio</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Metode Testing</h2>
+                
+                <h3>Manual Testing</h3>
+                <p>Pengujian dilakukan secara manual oleh tester atau pengguna:</p>
+                <ul>
+                    <li>Exploratory testing untuk menemukan masalah UI/UX</li>
+                    <li>Usability testing dengan real users</li>
+                    <li>Expert review oleh UX specialist</li>
+                    <li>Walkthrough dengan stakeholder</li>
+                </ul>
+
+                <h3>A/B Testing</h3>
+                <p>Menguji dua versi desain untuk menentukan mana yang lebih baik:</p>
+                <ul>
+                    <li>Membuat dua variasi (A dan B) dari satu elemen atau page</li>
+                    <li>Menampilkan variasi berbeda ke user yang berbeda</li>
+                    <li>Mengumpulkan data metrik (click rate, conversion rate, time on page)</li>
+                    <li>Menganalisis hasil untuk menentukan variasi yang lebih efektif</li>
+                </ul>
+
+                <h3>Heatmaps</h3>
+                <p>Visualisasi data interaksi pengguna dengan aplikasi:</p>
+                <ul>
+                    <li>Click heatmap: menunjukkan area yang paling banyak diklik</li>
+                    <li>Scroll heatmap: menunjukkan seberapa jauh pengguna scroll</li>
+                    <li>Move heatmap: menunjukkan pergerakan mouse cursor</li>
+                    <li>Tools: Hotjar, Crazy Egg, Mouseflow</li>
+                </ul>
+
+                <h3>User Testing</h3>
+                <p>Melibatkan pengguna real untuk menguji aplikasi:</p>
+                <ul>
+                    <li>Merekrut user yang sesuai dengan target audience</li>
+                    <li>Memberikan task scenario untuk diselesaikan</li>
+                    <li>Mengobservasi dan merekam interaksi user</li>
+                    <li>Mengumpulkan feedback melalui interview atau questionnaire</li>
+                    <li>Menganalisis hasil untuk improvement</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>10 Prinsip Usability Jakob Nielsen</h2>
+                <p>Jakob Nielsen adalah expert terkenal di bidang usability yang merumuskan 10 prinsip heuristic untuk evaluasi UI/UX:</p>
+
+                <h3>1. Visibility of System Status</h3>
+                <p>Sistem harus selalu memberitahu pengguna tentang apa yang sedang terjadi melalui feedback yang tepat waktu. Contoh: loading indicator, progress bar, notification.</p>
+
+                <h3>2. Match Between System and Real World</h3>
+                <p>Sistem harus berbicara dalam bahasa pengguna, menggunakan kata, frasa, dan konsep yang familiar bagi pengguna, bukan jargon teknis.</p>
+
+                <h3>3. User Control and Freedom</h3>
+                <p>Pengguna sering melakukan aksi yang tidak disengaja. Sistem harus menyediakan cara untuk undo/redo dan exit dari situasi yang tidak diinginkan.</p>
+
+                <h3>4. Consistency and Standards</h3>
+                <p>Pengguna tidak perlu bertanya-tanya apakah kata, situasi, atau aksi yang berbeda memiliki makna yang sama. Ikuti konvensi platform dan industri.</p>
+
+                <h3>5. Error Prevention</h3>
+                <p>Lebih baik mencegah error daripada memberikan error message yang baik. Hilangkan kondisi yang prone to error atau berikan konfirmasi sebelum commit aksi.</p>
+
+                <h3>6. Recognition Rather Than Recall</h3>
+                <p>Minimalkan beban memory pengguna dengan membuat objek, aksi, dan opsi terlihat. Pengguna tidak harus mengingat informasi dari satu bagian ke bagian lain.</p>
+
+                <h3>7. Flexibility and Efficiency of Use</h3>
+                <p>Sediakan accelerator untuk expert user (seperti keyboard shortcut) sambil tetap mudah digunakan oleh novice user.</p>
+
+                <h3>8. Aesthetic and Minimalist Design</h3>
+                <p>Dialog tidak boleh mengandung informasi yang tidak relevan atau jarang dibutuhkan. Setiap unit informasi ekstra bersaing dengan unit informasi yang relevan.</p>
+
+                <h3>9. Help Users Recognize, Diagnose, and Recover from Errors</h3>
+                <p>Error message harus ditulis dalam bahasa sederhana (tidak kode error), menjelaskan masalah dengan jelas, dan menyarankan solusi konstruktif.</p>
+
+                <h3>10. Help and Documentation</h3>
+                <p>Meskipun sistem idealnya bisa digunakan tanpa dokumentasi, mungkin perlu menyediakan help dan dokumentasi yang mudah dicari, fokus pada task pengguna, dan tidak terlalu panjang.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Heuristic Evaluation:</strong> Prinsip-prinsip ini digunakan dalam heuristic evaluation, metode untuk menemukan usability problem dalam UI design dengan mengevaluasi interface terhadap prinsip-prinsip ini.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>

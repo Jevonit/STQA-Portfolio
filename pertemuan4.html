@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4 - Test Scenario, Test Case & Bug Report | Portofolio STQA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pertemuan 4: Test Scenario, Test Case & Bug Report</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pertemuan1.html">Pertemuan 1</a></li>
+                <li><a href="pertemuan2.html">Pertemuan 2</a></li>
+                <li><a href="pertemuan3.html">Pertemuan 3</a></li>
+                <li><a href="pertemuan4.html" class="active">Pertemuan 4</a></li>
+                <li><a href="pertemuan5.html">Pertemuan 5</a></li>
+                <li><a href="pertemuan6.html">Pertemuan 6</a></li>
+                <li><a href="pertemuan7.html">Pertemuan 7</a></li>
+                <li><a href="pertemuan8.html">Pertemuan 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Definisi Test Scenario dan Test Case</h2>
+                
+                <h3>Apa itu Test Scenario?</h3>
+                <p>Test Scenario adalah deskripsi high-level tentang apa yang akan ditest. Test scenario menggambarkan end-to-end functionality atau user journey yang perlu diverifikasi. Test scenario lebih bersifat naratif dan tidak mencakup detail langkah-langkah spesifik.</p>
+                
+                <p><strong>Karakteristik Test Scenario:</strong></p>
+                <ul>
+                    <li>High-level dan tidak terlalu detail</li>
+                    <li>Fokus pada "apa yang ditest" bukan "bagaimana mentest"</li>
+                    <li>Satu test scenario dapat mencakup multiple test cases</li>
+                    <li>Mudah dipahami oleh stakeholder non-technical</li>
+                </ul>
+
+                <h3>Apa itu Test Case?</h3>
+                <p>Test Case adalah dokumen detail yang berisi langkah-langkah spesifik, input data, preconditions, dan expected results untuk menguji suatu functionality. Test case bersifat lebih teknis dan granular dibandingkan test scenario.</p>
+
+                <p><strong>Karakteristik Test Case:</strong></p>
+                <ul>
+                    <li>Detail dan spesifik dengan step-by-step instructions</li>
+                    <li>Mencakup test data konkret</li>
+                    <li>Memiliki expected result yang jelas</li>
+                    <li>Dapat diexecute dan direproduksi oleh siapa saja</li>
+                    <li>Dapat di-automate</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Perbedaan Utama:</strong> Test Scenario adalah "WHAT to test" (apa yang ditest), sedangkan Test Case adalah "HOW to test" (bagaimana mentest dengan langkah-langkah detail).</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Template Test Scenario</h2>
+                
+                <p>Template standar untuk mendokumentasikan test scenario:</p>
+
+                <h3>Komponen Test Scenario</h3>
+                <ul>
+                    <li><strong>Scenario ID:</strong> Unique identifier (contoh: TS-001)</li>
+                    <li><strong>Scenario Name:</strong> Nama deskriptif yang jelas</li>
+                    <li><strong>Module/Feature:</strong> Bagian aplikasi yang ditest</li>
+                    <li><strong>Description:</strong> Penjelasan singkat tentang scenario</li>
+                    <li><strong>Priority:</strong> Critical, High, Medium, Low</li>
+                    <li><strong>Test Cases:</strong> Daftar test case terkait</li>
+                </ul>
+
+                <h3>Contoh Test Scenario - Aplikasi BMI</h3>
+                
+                <p><strong>Scenario ID:</strong> TS-BMI-001</p>
+                <p><strong>Scenario Name:</strong> Calculate BMI with Valid Input</p>
+                <p><strong>Module:</strong> BMI Calculator</p>
+                <p><strong>Description:</strong> Verify that BMI is calculated correctly when user enters valid height and weight values</p>
+                <p><strong>Priority:</strong> Critical</p>
+                <p><strong>Related Test Cases:</strong> TC-BMI-001, TC-BMI-002, TC-BMI-003</p>
+
+                <hr>
+
+                <p><strong>Scenario ID:</strong> TS-BMI-002</p>
+                <p><strong>Scenario Name:</strong> Input Validation</p>
+                <p><strong>Module:</strong> BMI Calculator</p>
+                <p><strong>Description:</strong> Verify that application properly validates user input and displays appropriate error messages for invalid inputs</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Related Test Cases:</strong> TC-BMI-004, TC-BMI-005, TC-BMI-006</p>
+
+                <hr>
+
+                <p><strong>Scenario ID:</strong> TS-BMI-003</p>
+                <p><strong>Scenario Name:</strong> BMI Category Display</p>
+                <p><strong>Module:</strong> BMI Calculator</p>
+                <p><strong>Description:</strong> Verify that correct BMI category (Underweight, Normal, Overweight, Obese) is displayed based on calculated BMI value</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Related Test Cases:</strong> TC-BMI-007, TC-BMI-008, TC-BMI-009, TC-BMI-010</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Template Test Case</h2>
+                
+                <p>Template standar untuk mendokumentasikan test case dengan detail lengkap:</p>
+
+                <h3>Komponen Test Case</h3>
+                <ul>
+                    <li><strong>Test Case ID:</strong> Unique identifier (contoh: TC-001)</li>
+                    <li><strong>Test Scenario ID:</strong> Link ke test scenario</li>
+                    <li><strong>Test Case Title:</strong> Judul deskriptif</li>
+                    <li><strong>Description:</strong> Penjelasan singkat test case</li>
+                    <li><strong>Preconditions:</strong> Kondisi yang harus dipenuhi sebelum test</li>
+                    <li><strong>Test Steps:</strong> Langkah-langkah detail untuk execute test</li>
+                    <li><strong>Test Data:</strong> Input data yang digunakan</li>
+                    <li><strong>Expected Result:</strong> Hasil yang diharapkan</li>
+                    <li><strong>Actual Result:</strong> Hasil aktual (diisi saat execution)</li>
+                    <li><strong>Status:</strong> Pass/Fail (diisi saat execution)</li>
+                    <li><strong>Priority:</strong> Critical, High, Medium, Low</li>
+                    <li><strong>Tested By:</strong> Nama tester</li>
+                    <li><strong>Tested Date:</strong> Tanggal execution</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Contoh Test Case - Aplikasi BMI</h2>
+
+                <h3>Test Case 1: Valid BMI Calculation - Normal Weight</h3>
+                <p><strong>Test Case ID:</strong> TC-BMI-001</p>
+                <p><strong>Test Scenario ID:</strong> TS-BMI-001</p>
+                <p><strong>Title:</strong> Calculate BMI for Normal Weight Range</p>
+                <p><strong>Description:</strong> Verify BMI calculation accuracy for inputs resulting in Normal weight category</p>
+                <p><strong>Priority:</strong> Critical</p>
+                <p><strong>Preconditions:</strong> BMI Calculator application is loaded and accessible</p>
+
+                <p><strong>Test Steps:</strong></p>
+                <ol>
+                    <li>Navigate to BMI Calculator page</li>
+                    <li>Enter height: 170 cm in height field</li>
+                    <li>Enter weight: 65 kg in weight field</li>
+                    <li>Click "Calculate BMI" button</li>
+                    <li>Observe the displayed BMI value and category</li>
+                </ol>
+
+                <p><strong>Test Data:</strong></p>
+                <ul>
+                    <li>Height: 170 cm</li>
+                    <li>Weight: 65 kg</li>
+                </ul>
+
+                <p><strong>Expected Result:</strong></p>
+                <ul>
+                    <li>BMI value displayed: 22.49 (±0.01)</li>
+                    <li>Category displayed: "Normal Weight"</li>
+                    <li>Result is displayed within 2 seconds</li>
+                </ul>
+
+                <hr>
+
+                <h3>Test Case 2: Input Validation - Negative Height</h3>
+                <p><strong>Test Case ID:</strong> TC-BMI-004</p>
+                <p><strong>Test Scenario ID:</strong> TS-BMI-002</p>
+                <p><strong>Title:</strong> Validate Negative Height Input</p>
+                <p><strong>Description:</strong> Verify that application rejects negative height values</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Preconditions:</strong> BMI Calculator application is loaded</p>
+
+                <p><strong>Test Steps:</strong></p>
+                <ol>
+                    <li>Navigate to BMI Calculator page</li>
+                    <li>Enter height: -170 cm</li>
+                    <li>Enter weight: 65 kg</li>
+                    <li>Click "Calculate BMI" button</li>
+                    <li>Observe the error message</li>
+                </ol>
+
+                <p><strong>Test Data:</strong></p>
+                <ul>
+                    <li>Height: -170 cm</li>
+                    <li>Weight: 65 kg</li>
+                </ul>
+
+                <p><strong>Expected Result:</strong></p>
+                <ul>
+                    <li>Error message displayed: "Please enter a valid positive height value"</li>
+                    <li>BMI is not calculated</li>
+                    <li>Input field is highlighted in red</li>
+                </ul>
+
+                <hr>
+
+                <h3>Test Case 3: BMI Category - Underweight</h3>
+                <p><strong>Test Case ID:</strong> TC-BMI-007</p>
+                <p><strong>Test Scenario ID:</strong> TS-BMI-003</p>
+                <p><strong>Title:</strong> Verify Underweight Category Display</p>
+                <p><strong>Description:</strong> Verify that Underweight category is displayed for BMI < 18.5</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Preconditions:</strong> BMI Calculator application is loaded</p>
+
+                <p><strong>Test Steps:</strong></p>
+                <ol>
+                    <li>Navigate to BMI Calculator page</li>
+                    <li>Enter height: 170 cm</li>
+                    <li>Enter weight: 50 kg</li>
+                    <li>Click "Calculate BMI" button</li>
+                    <li>Observe BMI value and category</li>
+                </ol>
+
+                <p><strong>Test Data:</strong></p>
+                <ul>
+                    <li>Height: 170 cm</li>
+                    <li>Weight: 50 kg</li>
+                    <li>Expected BMI: 17.30</li>
+                </ul>
+
+                <p><strong>Expected Result:</strong></p>
+                <ul>
+                    <li>BMI value: 17.30 (±0.01)</li>
+                    <li>Category: "Underweight"</li>
+                    <li>Category is displayed with appropriate color coding (e.g., blue/yellow)</li>
+                </ul>
+
+                <hr>
+
+                <h3>Test Case 4: Empty Input Fields</h3>
+                <p><strong>Test Case ID:</strong> TC-BMI-005</p>
+                <p><strong>Test Scenario ID:</strong> TS-BMI-002</p>
+                <p><strong>Title:</strong> Validate Empty Input Fields</p>
+                <p><strong>Description:</strong> Verify application behavior when calculate is clicked with empty fields</p>
+                <p><strong>Priority:</strong> High</p>
+                <p><strong>Preconditions:</strong> BMI Calculator application is loaded</p>
+
+                <p><strong>Test Steps:</strong></p>
+                <ol>
+                    <li>Navigate to BMI Calculator page</li>
+                    <li>Leave height field empty</li>
+                    <li>Leave weight field empty</li>
+                    <li>Click "Calculate BMI" button</li>
+                    <li>Observe error message</li>
+                </ol>
+
+                <p><strong>Test Data:</strong></p>
+                <ul>
+                    <li>Height: (empty)</li>
+                    <li>Weight: (empty)</li>
+                </ul>
+
+                <p><strong>Expected Result:</strong></p>
+                <ul>
+                    <li>Error message: "Please enter both height and weight values"</li>
+                    <li>BMI is not calculated</li>
+                    <li>Both input fields are highlighted</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Format Pelaporan Bug (Bug Report)</h2>
+                
+                <h3>Apa itu Bug Report?</h3>
+                <p>Bug Report adalah dokumen yang mendokumentasikan defect atau issue yang ditemukan dalam aplikasi selama testing. Bug report yang baik harus jelas, detail, dan reproducible sehingga developer dapat memahami dan memperbaiki masalah dengan efisien.</p>
+
+                <h3>Komponen Bug Report</h3>
+                <ul>
+                    <li><strong>Bug ID:</strong> Unique identifier (contoh: BUG-001)</li>
+                    <li><strong>Summary/Title:</strong> Deskripsi singkat dan jelas tentang bug</li>
+                    <li><strong>Description:</strong> Penjelasan detail tentang bug</li>
+                    <li><strong>Steps to Reproduce:</strong> Langkah-langkah untuk mereproduksi bug</li>
+                    <li><strong>Expected Result:</strong> Apa yang seharusnya terjadi</li>
+                    <li><strong>Actual Result:</strong> Apa yang sebenarnya terjadi</li>
+                    <li><strong>Severity:</strong> Critical, High, Medium, Low</li>
+                    <li><strong>Priority:</strong> Critical, High, Medium, Low</li>
+                    <li><strong>Environment:</strong> OS, browser, version, device</li>
+                    <li><strong>Test Data:</strong> Data yang digunakan saat bug terjadi</li>
+                    <li><strong>Attachments:</strong> Screenshot, video, log files</li>
+                    <li><strong>Reported By:</strong> Nama tester</li>
+                    <li><strong>Reported Date:</strong> Tanggal pelaporan</li>
+                    <li><strong>Assigned To:</strong> Developer yang ditugaskan</li>
+                    <li><strong>Status:</strong> New, Open, In Progress, Fixed, Closed, Rejected</li>
+                </ul>
+
+                <h3>Severity vs Priority</h3>
+                <p><strong>Severity:</strong> Tingkat dampak bug terhadap aplikasi (technical impact)</p>
+                <ul>
+                    <li>Critical: Aplikasi crash, data loss, security breach</li>
+                    <li>High: Fitur utama tidak berfungsi</li>
+                    <li>Medium: Fitur berfungsi tapi ada masalah</li>
+                    <li>Low: Cosmetic issue, typo</li>
+                </ul>
+
+                <p><strong>Priority:</strong> Urgensi perbaikan bug (business impact)</p>
+                <ul>
+                    <li>Critical: Harus diperbaiki segera (blocker)</li>
+                    <li>High: Harus diperbaiki sebelum release</li>
+                    <li>Medium: Diperbaiki jika ada waktu sebelum release</li>
+                    <li>Low: Bisa diperbaiki di release berikutnya</li>
+                </ul>
+
+                <h3>Contoh Bug Report - Aplikasi BMI</h3>
+
+                <p><strong>Bug ID:</strong> BUG-BMI-001</p>
+                <p><strong>Summary:</strong> BMI calculation shows incorrect result for decimal weight values</p>
+                <p><strong>Description:</strong> When entering weight with decimal values (e.g., 65.5 kg), the BMI calculator shows an incorrect BMI value. The calculation appears to round the weight incorrectly.</p>
+
+                <p><strong>Steps to Reproduce:</strong></p>
+                <ol>
+                    <li>Open BMI Calculator application</li>
+                    <li>Enter height: 170 cm</li>
+                    <li>Enter weight: 65.5 kg</li>
+                    <li>Click "Calculate BMI" button</li>
+                    <li>Observe the calculated BMI value</li>
+                </ol>
+
+                <p><strong>Expected Result:</strong> BMI should be 22.66 (65.5 / (1.7)²)</p>
+                <p><strong>Actual Result:</strong> BMI shows 22.49 (appears to use 65 instead of 65.5)</p>
+
+                <p><strong>Severity:</strong> High</p>
+                <p><strong>Priority:</strong> High</p>
+
+                <p><strong>Environment:</strong></p>
+                <ul>
+                    <li>OS: Windows 11</li>
+                    <li>Browser: Chrome 118.0</li>
+                    <li>Screen Resolution: 1920x1080</li>
+                </ul>
+
+                <p><strong>Test Data:</strong></p>
+                <ul>
+                    <li>Height: 170 cm</li>
+                    <li>Weight: 65.5 kg</li>
+                </ul>
+
+                <p><strong>Attachments:</strong> screenshot_bug_001.png</p>
+                <p><strong>Reported By:</strong> [Nama Tester]</p>
+                <p><strong>Reported Date:</strong> 2025-10-29</p>
+                <p><strong>Status:</strong> New</p>
+
+                <div class="highlight-box">
+                    <p><strong>Tips Bug Report yang Baik:</strong> Gunakan bahasa yang jelas dan objektif, sertakan screenshot atau video, pastikan bug reproducible, fokus pada satu issue per bug report, dan hindari membuat asumsi tentang penyebab bug.</p>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jevon Ivander Thomas - Portofolio STQA</p>
+        </div>
+    </footer>
+</body>
+</html>
