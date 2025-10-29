@@ -53,36 +53,7 @@ nav {
     z-index: 1000;
 }
 
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 1rem;
-}
 
-.menu-btn span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-.menu-btn.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-btn.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-btn.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 
 nav ul {
     list-style: none;
